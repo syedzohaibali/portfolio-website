@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Syed Zohaib Ali — DevOps Portfolio</title>
+  <meta name="description" content="Kubernetes • AWS/Azure • CI/CD • Microsoft 365 ↔ Google Workspace migrations" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Display quality + character; Inter + JetBrains Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- === Sidebar (desktop) / Drawer (mobile) === -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__top">
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <a class="logo" href="#home" aria-label="Home">
+        <span class="logo__dot"></span><span class="logo__text">HR</span>
+      </a>
+    </div>
+
+    <div class="profile">
+      <!-- Your picture centered above your name -->
+      <img class="avatar" src="assets/fiver.png" alt="Syed Zohaib Ali" />
+      <div class="profile__name">Syed Zohaib Ali</div>
+      <div class="profile__role">Senior DevOps Engineer</div>
+      <ul class="profile__meta">
+        <li>Azure & AWS</li>
+        <li>Kubernetes • CI/CD</li>
+        <li>M365 ↔ Workspace</li>
+      </ul>
+      <div class="sidebar__cta">
+        <a class="btn btn--primary" href="#consult">Free Consultation</a>
+        <a class="btn btn--ghost" href="#contact">Contact</a>
+      </div>
+      <div class="sidebar__social">
+        <a aria-label="GitHub" href="https://github.com/your-github" target="_blank" rel="noopener">GH</a>
+        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener">IN</a>
+        <a aria-label="Email" href="mailto:you@example.com">✉</a>
+      </div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="#home" class="navlink">Home</a>
+      <a href="#about" class="navlink">About</a>
+      <a href="#projects" class="navlink">Projects</a>
+      <a href="#skills" class="navlink">Skills</a>
+      <a href="#consult" class="navlink">Consultation</a>
+      <a href="#contact" class="navlink">Contact</a>
+      <button id="themeToggle" class="chip" type="button" title="Toggle theme">☾/☀</button>
+    </nav>
+
+    <footer class="sidebar__footer">
+      <small>© <span id="year"></span> HR</small>
+    </footer>
+  </aside>
+
+  <!-- === Main content === -->
+  <main class="content">
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <h1 class="headline hover-tilt">
+        I build cloud systems that scale <span class="accent rotate-on-hover">and stay online</span>.
+      </h1>
+      <p class="sub">
+        Reliable platforms on <strong>AWS & Azure</strong> using <strong>Kubernetes</strong>, GitHub Actions, and robust observability. 
+        I also lead <strong>M365 ↔ Google Workspace</strong> migrations.
+      </p>
+      <div class="cta">
+        <a class="btn btn--primary" href="#projects">See Projects</a>
+        <a class="btn btn--ghost" href="#consult">Book a Call</a>
+      </div>
+      <ul class="badges">
+        <li>Zero-downtime releases</li>
+        <li>Cost optimisation</li>
+        <li>99.9% uptime targets</li>
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <h2 class="section__title">Summary</h2>
+      <div class="grid-2">
+        <div>
+          <p>
+            I help teams ship reliably on cloud. Recently delivered a multi-tenant consolidation with staged mail routing, 
+            automated user mapping, and data migrations. I stabilise noisy systems fast and set up pipelines that don’t break at 2am.
+          </p>
+          <ul class="ticks">
+            <li>AKS/EKS with HPA & GitOps</li>
+            <li>Secure SSO/SCIM, Intune, Defender</li>
+            <li>Grafana, Prometheus, ELK, SLOs</li>
+          </ul>
+        </div>
+        <aside class="about__panel">
+          <h3>Fast facts</h3>
+          <ul class="facts">
+            <li>Handled 1300+ IoT devices</li>
+            <li>32-pod Django on AKS with Event Hubs</li>
+            <li>Cut infra costs by 28% in 2 months</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECTS with filters -->
+    <section id="projects" class="section reveal">
+      <h2 class="section__title">Featured Work</h2>
+
+      <div class="filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="k8s">Kubernetes</button>
+        <button class="chip" data-filter="cicd">CI/CD</button>
+        <button class="chip" data-filter="migrations">Migrations</button>
+      </div>
+
+      <div class="cards" id="projectGrid">
+        <article class="card hover-tilt" data-tags="k8s">
+          <div class="card__thumb thumb--k8s" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="grow-on-hover">AKS Microservices with Contextual HPA</h3>
+            <p>Autoscaling 32-pod Django + Event Hubs + Blob checkpoints, Grafana dashboards, and SLOs.</p>
+            <ul class="tags"><li>AKS</li><li>HPA</li><li>Grafana</li></ul>
+            <a class="link" href="#" target="_blank" rel="noopener">Architecture diagram</a>
+          </div>
+        </article>
+
+        <article class="card hover-tilt" data-tags="migrations">
+          <div class="card__thumb thumb--migrate" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="grow-on-hover">Multi-Tenant M365 → Workspace</h3>
+            <p>Consolidated schools; automated mapping via GAM, staged routing, and license clean-up.</p>
+            <ul class="tags"><li>CloudM</li><li>GWM</li><li>GAM</li></ul>
+            <a class="link" href="#" target="_blank" rel="noopener">Migration notes</a>
+          </div>
+        </article>
+
+        <article class="card hover-tilt" data-tags="cicd">
+          <div class="card__thumb thumb--cicd" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="grow-on-hover">Reusable CI/CD at Scale</h3>
+            <p>Actions pipelines: lint, tests, Docker builds, signed artifacts, env promotions with policies.</p>
+            <ul class="tags"><li>Actions</li><li>Docker</li><li>IaC</li></ul>
+            <a class="link" href="#" target="_blank" rel="noopener">Pipeline overview</a>
+          </div>
+        </article>
+
+        <article class="card hover-tilt" data-tags="k8s">
+          <div class="card__thumb thumb--eks" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="grow-on-hover">Blue/Green on EKS with ALB</h3>
+            <p>Weighted traffic shifting, smoke tests, and instant rollback hooks via runbooks.</p>
+            <ul class="tags"><li>EKS</li><li>ALB</li><li>Blue/Green</li></ul>
+            <a class="link" href="#" target="_blank" rel="noopener">Runbook</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS (icon tiles) -->
+    <section id="skills" class="section reveal">
+      <h2 class="section__title">Core Skills</h2>
+      <ul class="skills">
+        <li class="skill"><span>🧩</span> Kubernetes</li>
+        <li class="skill"><span>☁️</span> AWS</li>
+        <li class="skill"><span>🔷</span> Azure</li>
+        <li class="skill"><span>🔁</span> CI/CD (Actions, ADO)</li>
+        <li class="skill"><span>📈</span> Grafana/Prometheus</li>
+        <li class="skill"><span>🔐</span> SSO/SCIM</li>
+        <li class="skill"><span>📦</span> Docker</li>
+        <li class="skill"><span>🧰</span> Terraform</li>
+      </ul>
+    </section>
+
+    <!-- CALENDLY -->
+    <section id="consult" class="section reveal">
+      <h2 class="section__title">Book a Free Consultation</h2>
+      <p class="muted">Pick a 15-minute slot to discuss goals and the fastest path to value.</p>
+      <div class="calendly">
+        <!-- Replace with your real Calendly link -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/your-handle/15min" style="min-width:320px;height:700px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <h2 class="section__title">Contact</h2>
+      <form class="form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <div class="grid-2">
+          <label>Full name<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+        </div>
+        <label>Phone (optional)<input type="tel" name="phone" /></label>
+        <label>How can I help?<textarea name="message" rows="5" required></textarea></label>
+        <div class="form__row">
+          <label class="check"><input type="checkbox" required /> I agree to be contacted about my enquiry.</label>
+        </div>
+        <button class="btn btn--primary" type="submit">Send message</button>
+        <p class="form__note">You’ll get a reply within one business day.</p>
+      </form>
+    </section>
+
+    <button class="totop" id="totop" aria-label="Back to top">↑</button>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
