@@ -12,7 +12,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- === Sidebar (desktop) / Drawer (mobile) === -->
+<!-- Floating burger (visible on mobile) -->
+<button class="burger-fab" id="burgerFab" aria-label="Open menu" aria-expanded="false">☰</button>
+<!-- Dim background when drawer is open -->
+<div class="scrim" id="scrim" aria-hidden="true"></div>
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__top">
       <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
