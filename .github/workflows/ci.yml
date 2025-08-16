@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, zodev ]
+  pull_request:
+
+jobs:
+  lint:
+    name: Super-Linter (HTML/CSS/JS)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v6
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Enable only what you need:
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          # Optional: stop failing the whole build on warnings
+          ERROR_ON_MISSING_EXEC_BIT: false
