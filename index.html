@@ -7,15 +7,18 @@
   <meta name="description" content="Kubernetes • AWS/Azure • CI/CD • Microsoft 365 ↔ Google Workspace migrations" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Display quality + character; Inter + JetBrains Mono -->
+  <!-- Inter + JetBrains Mono -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<!-- Floating burger (visible on mobile) -->
-<button class="burger-fab" id="burgerFab" aria-label="Open menu" aria-expanded="false">☰</button>
-<!-- Dim background when drawer is open -->
-<div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <!-- Floating burger (visible on mobile) -->
+  <button class="burger-fab" id="burgerFab" aria-label="Open menu" aria-expanded="false">☰</button>
+  <!-- Dim background when drawer is open -->
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <!-- === Sidebar (desktop) / Drawer (mobile) === -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__top">
       <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
@@ -25,15 +28,14 @@
     </div>
 
     <div class="profile">
-      <!-- Your picture centered above your name -->
       <img class="avatar" src="assets/fiver.png" alt="Syed Zohaib Ali" />
       <div class="profile__name">Syed Zohaib Ali</div>
-      <div class="profile__role">Senior DevOps Engineer</div>
+      <div class="profile__role"><strong>DevOps Engineer</strong></div>
       <ul class="profile__meta">
-        <li> GCP, Azure, AWS</li>
-        <li> Jenkins, Terraform, Ansible</li>
-        <li> Kubernetes | CI/CD</li>
-        <li> M365 | Workspace</li>
+        <li>GCP • Azure • AWS</li>
+        <li>Jenkins • Terraform • Ansible</li>
+        <li>Kubernetes • CI/CD</li>
+        <li>M365 ↔ Workspace</li>
       </ul>
       <div class="sidebar__cta">
         <a class="btn btn--primary" href="#consult">Free Consultation</a>
@@ -63,25 +65,34 @@
 
   <!-- === Main content === -->
   <main class="content">
-    <!-- HERO -->
-    <section id="home" class="section hero">
+
+    <!-- HERO (centered + alt background + colored keywords) -->
+    <section id="home" class="section hero hero--center hero--altbg">
       <div class="hero__bg" aria-hidden="true"></div>
-      <h1 class="headline hover-tilt">
-        I build cloud systems that scale <span class="accent rotate-on-hover">and stay online</span>.
-      </h1>
-      <p class="sub">
-        Reliable platforms on <strong>AWS & Azure</strong> using <strong>Kubernetes</strong>, GitHub Actions, and robust observability. 
-        I also lead <strong>M365 to Google Workspace</strong> migrations.
-      </p>
-      <div class="cta">
-        <a class="btn btn--primary" href="#projects">See Projects</a>
-        <a class="btn btn--ghost" href="#consult">Book a Call</a>
+
+      <div class="hero__inner">
+        <h1 class="headline">
+          I build <span class="hl">cloud systems</span> that <span class="hl">scale</span> and stay online.
+        </h1>
+        <p class="sub">
+          Reliable platforms on <span class="hl">AWS</span> &amp; <span class="hl">Azure</span> using
+          <span class="hl">Kubernetes</span>, <span class="hl">GitHub Actions</span>, and robust observability.
+          I also lead <span class="hl">M365 → Google Workspace</span> migrations.
+        </p>
+
+        <!-- centered buttons -->
+        <div class="cta hero__actions">
+          <a class="btn btn--primary" href="#projects">See Projects</a>
+          <a class="btn btn--ghost" href="#consult">Book a Call</a>
+        </div>
+
+        <!-- centered chips -->
+        <ul class="badges hero__tags">
+          <li>Zero-downtime releases</li>
+          <li>Cost optimisation</li>
+          <li>99.9% uptime targets</li>
+        </ul>
       </div>
-      <ul class="badges">
-        <li>Zero-downtime releases</li>
-        <li>Cost optimisation</li>
-        <li>99.9% uptime targets</li>
-      </ul>
     </section>
 
     <!-- ABOUT -->
@@ -90,11 +101,11 @@
       <div class="grid-2">
         <div>
           <p>
-            I help teams ship reliably on cloud. Recently delivered a multi-tenant consolidation with staged mail routing, 
+            I help teams ship reliably on cloud. Recently delivered a multi-tenant consolidation with staged mail routing,
             automated user mapping, and data migrations. I stabilise noisy systems fast and set up pipelines that don’t break at 2am.
           </p>
           <ul class="ticks">
-            <li>AKS/EKS with HPA & GitOps</li>
+            <li>AKS/EKS with HPA &amp; GitOps</li>
             <li>Secure SSO/SCIM, Intune, Defender</li>
             <li>Grafana, Prometheus, ELK, SLOs</li>
           </ul>
